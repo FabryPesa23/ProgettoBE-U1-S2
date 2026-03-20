@@ -1,9 +1,9 @@
 package fabriziopesaresi.entities;
 
 public class Videogioco extends Gioco {
-    private String piattaforma;
-    private int durataOre;
-    private Genere genere;
+    private final String piattaforma;
+    private final int durataOre;
+    private final Genere genere;
 
     public Videogioco(String titolo, int annoPubblicazione, double prezzo, String piattaforma, int durataOre, Genere genere) {
         super(titolo, annoPubblicazione, prezzo);

@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Collezione {
-    private List<Gioco> catalogo = new ArrayList<>();
+    private final List<Gioco> catalogo = new ArrayList<>();
 
     public void aggiungi(Gioco g) {
         catalogo.add(g);

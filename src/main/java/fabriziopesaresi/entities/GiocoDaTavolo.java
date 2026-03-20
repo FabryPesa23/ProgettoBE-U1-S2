@@ -1,8 +1,8 @@
 package fabriziopesaresi.entities;
 
 public class GiocoDaTavolo extends Gioco {
-    private int numeroGiocatori;
-    private int durataMediaMinuti;
+    private final int numeroGiocatori;
+    private final int durataMediaMinuti;
 
     public GiocoDaTavolo(String titolo, int annoPubblicazione, double prezzo, int numeroGiocatori, int durataMediaMinuti) {
         super(titolo, annoPubblicazione, prezzo);

@@ -3,10 +3,10 @@ package fabriziopesaresi.entities;
 import java.util.UUID;
 
 public abstract class Gioco {
-    private String id;
-    private String titolo;
-    private int annoPubblicazione;
-    private double prezzo;
+    private final String id;
+    private final String titolo;
+    private final int annoPubblicazione;
+    private final double prezzo;
 
     public Gioco(String titolo, int annoPubblicazione, double prezzo) {
         this.id = UUID.randomUUID().toString();
