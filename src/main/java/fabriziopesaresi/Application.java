@@ -22,10 +22,14 @@ public class Application {
             miaCollezione.aggiungi(randomVG.get());
         }
 
+        //test ********
+        miaCollezione.aggiungi(new GiocoDaTavolo("Dixit", 2008, 30.0, 6, 30));
+        miaCollezione.aggiungi(new GiocoDaTavolo("Monopoly", 1935, 25.0, 8, 90));
+
         boolean continua = true;
         while (continua) {
             System.out.println("\n--- MENU GESTIONE ---");
-            System.out.println("1. Cerca per ID | 2. Cerca per Prezzo | 3. Rimuovi | 0. Esci");
+            System.out.println("1. Cerca per ID | 2. Cerca per Prezzo | 3. Cerca per Giocatori | 4. Rimuovi | 0. Esci");
 
             try {
                 int scelta = Integer.parseInt(sc.nextLine());
@@ -41,6 +45,16 @@ public class Application {
                         miaCollezione.ricercaPerPrezzo(pMax).forEach(System.out::println);
                         break;
                     case 3:
+                        System.out.print("Inserisci numero giocatori: ");
+                        int nG = Integer.parseInt(sc.nextLine());
+                        List<GiocoDaTavolo> filtrati = miaCollezione.ricercaPerGiocatori(nG);
+                        if (filtrati.isEmpty()) {
+                            System.out.println("Nessun gioco da tavolo trovato per " + nG + " giocatori.");
+                        } else {
+                            filtrati.forEach(System.out::println);
+                        }
+                        break;
+                    case 4:
                         System.out.print("ID da eliminare: ");
                         miaCollezione.rimuovi(sc.nextLine());
                         System.out.println("Elemento rimosso.");
